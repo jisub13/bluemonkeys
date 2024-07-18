@@ -45,6 +45,7 @@ interval_size = len(df_csi) / len(df_temp)
 print(interval_size)
 
 
+# truncate either csi or temp
 df_csi['group'] = df_csi.index // interval_size
 df_avg_csi = df_csi.groupby('group').mean().reset_index()
 if (len(df_avg_csi) > len(df_temp)):
